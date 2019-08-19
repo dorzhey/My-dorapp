@@ -1,0 +1,13 @@
+﻿{% extends 'dorapp/base.html' %}
+
+{% block content %}
+<div class="tool">
+    {% if tool.stock_date %}
+    <div class="date">
+        {{ tool.stock_date }}
+    </div>
+    {% endif %}
+    <h1>{{ tool.tool_name }}</h1>
+    <p>{{ tool.description|linebreaksbr }}</p>
+</div>
+{% endblock %}

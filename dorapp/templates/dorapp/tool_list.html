@@ -1,25 +1,11 @@
-﻿<!DOCTYPE html>
+﻿{% extends 'dorapp/base.html' %}
 
-<html>
-<head>
-    <title>Tool list</title>
-</head>
-<body>
-    <div>
-        <h1><a href="/">Dor's tool database</a></h1>
+{% for tool in tools %}
+    <div class="tool">
+        <div class="date">
+            <p>Добавлено: {{ tool.stock_date }}</p>
+        </div>
+        <h1><a href="{% url 'tool_detail' pk=tool.pk %}">{{ tool.tool_name }}</a></h1>
+        <p>{{ tool.description|linebreaksbr }}</p>
     </div>
-
-    <div>
-        <h2><a href="">My first tool</a></h2>
-        <p>LASER BEAM</p>
-        <p>stock date: 14.06.2014, 12:14</p>
-    </div>
-
-    <div>
-        <h2><a href="">My second tool</a></h2>
-        <a href="https://google.com">OPA na gugl</a>
-        <p>Inference machine</p>
-        <p>stock date: 14.06.2014, 12:15</p>
-    </div>
-</body>
-</html>
+{% endfor %}

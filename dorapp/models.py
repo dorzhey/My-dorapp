@@ -2,9 +2,9 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class tool(models.Model):
+class Tool(models.Model):
     tool_name = models.CharField(max_length = 20)
-    description = models.CharField(max_length = 30)
+    description = models.CharField(max_length = 140)
     stock_date = models.DateTimeField(default = timezone.now)
     
     def stock(self):

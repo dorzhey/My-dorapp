@@ -1,0 +1,34 @@
+﻿{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Tool list</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/dorapp.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">Dor's app for tools</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}
+                {% for tool in tools %}
+                <div class="tool">
+                    <div class="date">
+                        <p>Добавлено: {{ tool.stock_date }}</p>
+                    </div>
+                    <h1><a href="{% url 'tool_detail' pk=tool.pk %}">{{ tool.tool_name }}</a></h1>
+                    <p>{{ tool.description|linebreaksbr }}</p>
+                </div>
+                {% endfor %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
