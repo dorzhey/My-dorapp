@@ -1,5 +1,4 @@
 ﻿{% load static %}
-<!DOCTYPE html>
 
 <html>
 <head>
@@ -11,21 +10,13 @@
 </head>
 <body>
     <div class="page-header">
+        <a href="{% url 'tool_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         <h1><a href="/">Dor's app for tools</a></h1>
     </div>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
                 {% block content %}
-                {% for tool in tools %}
-                <div class="tool">
-                    <div class="date">
-                        <p>Добавлено: {{ tool.stock_date }}</p>
-                    </div>
-                    <h1><a href="{% url 'tool_detail' pk=tool.pk %}">{{ tool.tool_name }}</a></h1>
-                    <p>{{ tool.description|linebreaksbr }}</p>
-                </div>
-                {% endfor %}
                 {% endblock %}
             </div>
         </div>

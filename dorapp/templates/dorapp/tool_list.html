@@ -1,11 +1,13 @@
 ﻿{% extends 'dorapp/base.html' %}
 
-{% for tool in tools %}
-    <div class="tool">
-        <div class="date">
-            <p>Добавлено: {{ tool.stock_date }}</p>
+{% block content %}
+    {% for tool in tools %}
+        <div class="tool">
+            <div class="date">
+                <p>Добавлено: {{ tool.stock_date }}</p>
+            </div>
+            <h1><a href="{% url 'tool_detail' pk=tool.pk %}">{{ tool.tool_name }}</a></h1>
+            <p>{{ tool.description|linebreaksbr }}</p>
         </div>
-        <h1><a href="{% url 'tool_detail' pk=tool.pk %}">{{ tool.tool_name }}</a></h1>
-        <p>{{ tool.description|linebreaksbr }}</p>
-    </div>
-{% endfor %}
+    {% endfor %}
+{% endblock %}

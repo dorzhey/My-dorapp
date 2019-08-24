@@ -1,5 +1,5 @@
 ﻿body {
-    padding-left: 15px;
+    padding-left: 20px;
 }
 h1 a {
     color: mediumvioletred;
@@ -33,7 +33,7 @@ h1, h2, h3, h4 {
     float: right;
 }
 
-.post-form textarea, .post-form input {
+.tool-form textarea, .tool-form input {
     width: 100%;
 }
 
